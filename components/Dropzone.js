@@ -16,7 +16,7 @@ const Dropzone = () => {
     const { usuario, autenticado } = AuthContext;
 
     const onDropRejected = () => {
-        mostrarAlerta('No se pudo subir, el límite es 2MB, obten una cuenta gratis para subir archivos hasta de 30MB.');
+        mostrarAlerta('No se pudo subir, el límite es 10MB, obten una cuenta gratis para subir archivos hasta de 100MB.');
     }
 
     const onDropAccepted = useCallback(async (acceptedFiles) => {
@@ -29,7 +29,7 @@ const Dropzone = () => {
 
     }, []);
 
-    const maxSize = autenticado ? 31457280 : 2097152;
+    const maxSize = autenticado ? 104857600 : 10485760;
 
 
     //Extaer contenido de Dropzone
